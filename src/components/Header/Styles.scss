@@ -1,0 +1,17 @@
+header {
+    color: #ffffff;  
+    // position: sticky;
+    width: 100%;
+    top: 0;  
+    z-index: 1;
+    background-color: #1f4462;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 1.5rem;
+    margin: auto;
+}
