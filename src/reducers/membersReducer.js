@@ -9,23 +9,25 @@ export const SEARCH_MEMBERS = 'SEARCH_MEMBERS';
 const selectBy = (value, select, state) => {
   switch (select) {
     case 'id':
-      return state.allMembers.filter(member => member.id.toLowerCase() === value);
+      return state.allMembers.filter(member => member.id.toLowerCase().includes(value));
     case 'gender':
-      return state.allMembers.filter(member => member.gender.toLowerCase() === value);
+      return state.allMembers.filter(member => member.gender.toLowerCase().includes(value));
     case 'party':
-      return state.allMembers.filter(member => member.party.toLowerCase() === value);
+      return state.allMembers.filter(member => member.party.toLowerCase().includes(value));
     case 'title':
-      return state.allMembers.filter(member => member.title.toLowerCase() === value);
+      return state.allMembers.filter(member => member.title.toLowerCase().includes(value));
     case 'name':
-      return state.allMembers.filter(member => member.name.toLowerCase() === value);
+      return state.allMembers.filter(member => 
+        member.first_name.toLowerCase().includes(value) ||
+        member.last_name.toLowerCase().includes(value));
     case 'all':
       return state.allMembers.filter(item => 
-          item.id.toLowerCase() === value ||
-          item.gender.toLowerCase() === value ||
-          item.party.toLowerCase() === value ||
-          item.title.toLowerCase() === value ||
-          item.first_name.toLowerCase() === value ||
-          item.last_name.toLowerCase() === value 
+          item.id.toLowerCase().includes(value) ||
+          item.gender.toLowerCase().includes(value) ||
+          item.party.toLowerCase().includes(value) ||
+          item.title.toLowerCase().includes(value) ||
+          item.first_name.toLowerCase().includes(value) ||
+          item.last_name.toLowerCase().includes(value) 
       );
     default:
       return state.allMembers;

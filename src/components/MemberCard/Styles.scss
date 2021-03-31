@@ -1,7 +1,28 @@
+@import "../../assets/styles/defaultStyles.scss";
+
 .memberCard {
     border: 1px solid black;
+    border-radius: 5px;
     list-style: none;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     margin: 10px 0;
     text-align: center;
+}
+
+.memberCard:hover {
+    cursor: pointer;
+    background-color: rgb(216, 213, 213);
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .memberCard {
+        width: 49%;
+    }
+}
+
+@media (min-width: $breakpoint-computer) {
+    .memberCard {
+        width: 30%;
+    }
 }

@@ -19,7 +19,7 @@ function App(props) {
   return (
     <Router>
       <Header title="ProPublica Congress" />
-      <SearchBar membersReducer={props.membersReducer}/>
+      
       
       <Route path='/' exact component={MembersList}/>
       {/* <Route path='/members/:id' component={}/> */}

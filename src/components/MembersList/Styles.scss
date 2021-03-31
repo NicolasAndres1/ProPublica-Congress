@@ -1,5 +1,22 @@
+@import "../../assets/styles/defaultStyles.scss";
+
 .memberList {
-    display: flex;
-    margin: 0;
-    padding: 0;
+    display: block;
+    width: 80%;
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .memberList {
+        display: flex;
+        flex-flow: wrap;
+        width: 91%;
+        justify-content: space-evenly;
+        margin: auto 0;
+    }
+}
+
+@media (min-width: $breakpoint-computer) {
+    .memberList {
+        margin: auto;
+    }
 }
