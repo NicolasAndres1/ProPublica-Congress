@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import './Styles.scss';
+import { connect } from 'react-redux';
 
-const SEARCH_FIELDS = ['All', 'Name', 'Title', 'Gender', 'Party'];
+import './Styles.scss';
+import { filterMembers } from '../../actions/actions';
+
+const SEARCH_FIELDS = ['All', 'ID','Name', 'Title', 'Gender', 'Party'];
 
 const SearchBar = (props) => {
     const [input, setInput] = useState('');
@@ -17,9 +20,9 @@ const SearchBar = (props) => {
         event.preventDefault();
 
         const { membersReducer } = props;
-        props.searchData({
+        props.filterMembers({
             membersReducer,
-            value: { valueInput: input.trim(), filter },
+            value: { input: input.trim(), filter },
           });
     }
 
@@ -51,4 +54,10 @@ const SearchBar = (props) => {
     );
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+    return {
+        membersReducer: state.membersReducer
+    }
+}
+
+export default connect(mapStateToProps, { filterMembers })(SearchBar);

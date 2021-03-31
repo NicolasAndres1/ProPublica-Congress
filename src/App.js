@@ -6,7 +6,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
 import MembersList from './components/MembersList/MembersList';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 import { getAllMembers } from './actions/actions';
 
@@ -23,7 +23,8 @@ function App(props) {
       
       <Route path='/' exact component={MembersList}/>
       {/* <Route path='/members/:id' component={}/> */}
-      {/* <Footer /> */}
+      
+      <Footer />
     </Router>
   );
 }

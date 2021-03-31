@@ -2,10 +2,17 @@ import axios from "axios";
 
 export const getMembersSuccess = members => {
     return {
-      type: "ADD_STATE",
+      type: 'SET_STATE',
       members
     };
   };
+
+export const filterMembers = (data) => {
+    return {
+        type: 'SEARCH_MEMBERS',
+        data
+    }
+}
 
 export const getAllMembers = () => {
     return dispatch => {
@@ -14,7 +21,7 @@ export const getAllMembers = () => {
         })
             .then(res => {
                 if (res.status !== 200) {
-                    throw new Error("Failed to fetch.");
+                    throw new Error("Members could not be fetched");
                 }
                 return res;
             })

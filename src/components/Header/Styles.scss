@@ -1,10 +1,12 @@
+@import "../../assets/styles/defaultStyles.scss";
+
 header {
     color: #ffffff;  
     // position: sticky;
     width: 100%;
     top: 0;  
     z-index: 1;
-    background-color: #1f4462;
+    background-color: $appColor;
     height: 4rem;
     display: flex;
     justify-content: center;

@@ -1,19 +1,19 @@
 import { connect } from "react-redux";
+import MemberCard from "../MemberCard/MemberCard";
 
 const MembersList = props => {
-    console.log(props)
-
     return (
-        <>
-            {props.membersReducer.length !== 0 ? 
-                props.membersReducer.members.map((member, index) => 
-                    <p key={index}> { member.first_name } </p>
+        <ul className='memberList'>
+            {props.membersReducer.membersToDisplay.length !== 0 ?
+                props.membersReducer.membersToDisplay.map((member, index) => 
+                    <MemberCard 
+                        key={index}
+                        member={member}/>
                 ) :
                 <h3> Loading </h3>
             }
-        </>
-    );
-};
+        </ul>
+)};
 
 const mapStateToProps = (state) => {
     return {
