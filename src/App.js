@@ -1,16 +1,41 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import './App.scss';
 import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
+import MembersList from './components/MembersList/MembersList';
 // import Footer from './components/Footer/Footer';
 
-function App() {
+import { getAllMembers } from './actions/actions';
+
+function App(props) {
+
+  useEffect(() => {
+    props.getAllMembers()
+  }, []);
+
   return (
-    <>
-      <Header title={'ProPublica Congress'} />
-      <SearchBar />
+    <Router>
+      <Header title="ProPublica Congress" />
+      <SearchBar membersReducer={props.membersReducer}/>
+      
+      <Route path='/' exact component={MembersList}/>
+      {/* <Route path='/members/:id' component={}/> */}
       {/* <Footer /> */}
-    </>
+    </Router>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    membersReducer: state.membersReducer
+  };
+};
+
+const mapDispatchToProps = {
+  getAllMembers
+} 
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
