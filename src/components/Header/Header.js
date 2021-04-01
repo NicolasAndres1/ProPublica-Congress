@@ -1,5 +1,5 @@
-import React from 'react';
-import './Styles.scss';
+import React from 'react'
+import './Styles.scss'
 
 const Header = ({ title }) => (
   <header>
@@ -7,7 +7,6 @@ const Header = ({ title }) => (
       { title }
     </h2>
   </header>
-);
+)
 
-
-export default Header;
+export default Header

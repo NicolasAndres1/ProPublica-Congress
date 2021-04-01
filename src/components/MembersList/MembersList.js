@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from "react-redux";
-import MemberCard from "../MemberCard/MemberCard";
-import SearchBar from "../SearchBar/SearchBar";
+import React from 'react'
+import { connect } from 'react-redux'
+import MemberCard from '../MemberCard/MemberCard'
+import SearchBar from '../SearchBar/SearchBar'
 
-import './Styles.scss';
+import './Styles.scss'
 
 const MembersList = props => (
     <>
@@ -16,12 +16,12 @@ const MembersList = props => (
             )}
         </ul>
     </>
-);
+)
 
 const mapStateToProps = (state) => {
-    return {
-        membersReducer: state.membersReducer
-    }
+  return {
+    membersReducer: state.membersReducer
+  }
 }
 
-export default connect(mapStateToProps, {})(MembersList);
+export default connect(mapStateToProps, {})(MembersList)
