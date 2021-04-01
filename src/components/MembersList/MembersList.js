@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from "react-redux";
 import MemberCard from "../MemberCard/MemberCard";
 import SearchBar from "../SearchBar/SearchBar";

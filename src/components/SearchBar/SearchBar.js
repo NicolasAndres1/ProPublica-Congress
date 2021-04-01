@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './Styles.scss';
 import { filterMembers } from '../../actions/actions';
@@ -23,7 +24,7 @@ const SearchBar = (props) => {
         props.filterMembers({
             membersReducer,
             value: { input: input.trim(), filter },
-          });
+        });
     }
 
     return (
@@ -58,6 +59,11 @@ const mapStateToProps = (state) => {
     return {
         membersReducer: state.membersReducer
     }
+}
+
+SearchBar.PropTypes = {
+    membersReducer: PropTypes.func.isRequired,
+    filterMembers: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, { filterMembers })(SearchBar);
