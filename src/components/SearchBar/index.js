@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 
-import './Styles.scss'
+import './styles.scss'
 import { filterMembers } from '../../actions/actions'
 
 const SEARCH_FIELDS = ['All', 'ID', 'Name', 'Title', 'Gender', 'Party']
@@ -59,11 +58,6 @@ const mapStateToProps = (state) => {
   return {
     membersReducer: state.membersReducer
   }
-}
-
-SearchBar.PropTypes = {
-  membersReducer: PropTypes.func.isRequired,
-  filterMembers: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, { filterMembers })(SearchBar)
