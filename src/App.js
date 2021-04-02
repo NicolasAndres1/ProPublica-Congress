@@ -20,9 +20,9 @@ function App (props) {
       <Header title="ProPublica Congress" />
       
       <Switch>
-        <Route path='/' exact component={MembersList}/>
-        <Route path='/members/' component={MemberDetails}/>
-        <Redirect to='/'/>
+        <Route path='/' exact component={MembersList} />
+        <Route path='/members/' component={MemberDetails} />
+        <Redirect to='/' />
       </Switch>
       
       <Footer />
