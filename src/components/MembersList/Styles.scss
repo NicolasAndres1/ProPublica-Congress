@@ -1,8 +1,18 @@
 @import "../../assets/styles/defaultStyles.scss";
 
+.membersContent {
+    width: 100%;
+}
+
 .memberList {
     display: block;
     width: 80%;
+}
+
+.membersContent .pagination {
+    width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -13,10 +23,18 @@
         justify-content: space-evenly;
         margin: auto 0;
     }
+
+    .membersContent .pagination {
+        width: 90%;
+    }
 }
 
 @media (min-width: $breakpoint-computer) {
     .memberList {
         margin: auto;
+    }
+
+    .membersContent .pagination {
+        width: 98%;
     }
 }

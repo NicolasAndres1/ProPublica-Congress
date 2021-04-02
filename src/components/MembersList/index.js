@@ -24,7 +24,7 @@ const MembersList = props => {
   }
 
   return (
-    <>
+    <div className='membersContent'>
         <SearchBar membersReducer={props.membersReducer}/>
         {<ul className='memberList'>
             {members.map((member) => 
@@ -33,19 +33,19 @@ const MembersList = props => {
                     member={member}/>
             )}
         </ul>}
-        <ReactPaginate 
-          previousLabel={'prev'}
-          nextLabel={'next'}
-          breakLabel={'...'}
-          breakClassName={'break-me'}
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          onPageChange={handlePageClick}
-          containerClassName={'pagination'}
-          subContainerClassName={'pages pagination'}
-          activeClassName={'active'}/>
-    </>
+          <ReactPaginate 
+            previousLabel={'prev'}
+            nextLabel={'next'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            pageCount={pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={handlePageClick}
+            containerClassName={'pagination'}
+            subContainerClassName={'pages pagination'}
+            activeClassName={'active'}/>
+    </div>
   )
 }
 
