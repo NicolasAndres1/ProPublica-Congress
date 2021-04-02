@@ -1,7 +1,9 @@
 @import "./assets/styles/defaultStyles.scss";
 
 .pagination {
+  width: 100%;
   display: flex;
+  justify-content: center;
   list-style: none;
   outline: none;
 }
@@ -14,6 +16,7 @@
 
 .pagination > li > a {
   border: 1px solid black ;
+  width: auto;
   padding: 5px 6px;
   outline: none;
   cursor: pointer;
@@ -34,6 +37,10 @@
 }
 
 @media (min-width: $breakpoint-tablet) {
+  .pagination {
+    padding: 0;
+  }
+
   .pagination > li > a {
     padding: 5px 10px;
   }

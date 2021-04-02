@@ -1,18 +1,15 @@
 @import "../../assets/styles/defaultStyles.scss";
 
-.membersContent {
-    width: 100%;
-}
-
 .memberList {
     display: block;
     width: 80%;
 }
 
-.membersContent .pagination {
-    width: 80%;
+.paginationContainer {
+    max-width: 90%;
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
 @media (min-width: $breakpoint-tablet) {
@@ -24,17 +21,13 @@
         margin: auto 0;
     }
 
-    .membersContent .pagination {
-        width: 90%;
+    .paginationContainer {
+        max-width: 100%;
     }
 }
 
 @media (min-width: $breakpoint-computer) {
     .memberList {
         margin: auto;
-    }
-
-    .membersContent .pagination {
-        width: 98%;
     }
 }
