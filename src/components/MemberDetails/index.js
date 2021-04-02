@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import './styles.scss'
+import './Styles.scss'
 import maleAvatar from '../../assets/img/male-icon.png'
 import femaleAvatar from '../../assets/img/female-icon.png'
 

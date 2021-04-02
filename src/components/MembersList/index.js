@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import MemberCard from '../MemberCard/index'
 import SearchBar from '../SearchBar/index'
 
-import './styles.scss'
+import './Styles.scss'
 
 const MembersList = props => (
     <>

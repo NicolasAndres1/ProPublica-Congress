@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import './styles.scss'
+import './Styles.scss'
 import { filterMembers } from '../../actions/actions'
 
 const SEARCH_FIELDS = ['All', 'ID', 'Name', 'Title', 'Gender', 'Party']

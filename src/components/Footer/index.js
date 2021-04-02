@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.scss'
+import './Styles.scss'
 
 export const Footer = () => (
   <footer> @Nicolas Andres - Challenge for LenioLabs </footer>
