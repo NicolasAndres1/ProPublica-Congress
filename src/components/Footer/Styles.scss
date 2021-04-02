@@ -1,7 +1,6 @@
 @import "../../assets/styles/defaultStyles.scss";
 
 footer {
-  // position: fixed;
   margin-top: auto;
   display: flex;
   height: 50px;
@@ -10,4 +9,12 @@ footer {
   color: white;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: $breakpoint-computer) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 }
