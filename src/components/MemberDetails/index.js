@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import './Styles.scss'
+import './styles.scss'
 import maleAvatar from '../../assets/img/male-icon.png'
 import femaleAvatar from '../../assets/img/female-icon.png'
 
@@ -14,9 +14,9 @@ const MemberDetails = (props) => {
     const queryString = url.search
     const searchParams = new URLSearchParams(queryString)
     const id = searchParams.get('id')
-
+    
     setMember(props.membersReducer.membersToDisplay.filter(member => member.id === id))
-  }, [])
+  }, [props])
 
   return (
     <>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import MemberCard from '../MemberCard/MemberCard'
-import SearchBar from '../SearchBar/SearchBar'
+import MemberCard from '../MemberCard/index'
+import SearchBar from '../SearchBar/index'
 
-import './Styles.scss'
+import './styles.scss'
 
 const MembersList = props => (
     <>

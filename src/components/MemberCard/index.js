@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Styles.scss'
+import './styles.scss'
 
 const MemberCard = ({ member }) => (
     <li className='memberCard'>
