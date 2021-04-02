@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import './App.scss'
-import Header from './components/Header/Header'
-import MembersList from './components/MembersList/MembersList'
-import MemberDetails from './components/MemberDetails/MemberDetails'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header/index'
+import MembersList from './components/MembersList/index'
+import MemberDetails from './components/MemberDetails/index'
+import Footer from './components/Footer/index'
 
 import { getAllMembers } from './actions/actions'
 
@@ -19,8 +19,11 @@ function App (props) {
     <Router>
       <Header title="ProPublica Congress" />
       
-      <Route path='/' exact component={MembersList}/>
-      <Route path='/members/' component={MemberDetails}/>
+      <Switch>
+        <Route path='/' exact component={MembersList}/>
+        <Route path='/members/' component={MemberDetails}/>
+        <Redirect to='/'/>
+      </Switch>
       
       <Footer />
     </Router>
