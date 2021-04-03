@@ -7,11 +7,11 @@ This project was bootstrapped with Create React App.
 
 The API used is ProPublica. Here is the link to documentation: https://projects.propublica.org/api-docs/congress-api/members/
 
-## npm install
+### `npm install`
 
 In order to install node dependencies use `npm install`.
 
-### npm start
+### `npm start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
