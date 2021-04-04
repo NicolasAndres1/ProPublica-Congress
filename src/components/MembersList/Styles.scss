@@ -11,6 +11,11 @@
     justify-content: center;
 }
 
+.message {
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: $breakpoint-tablet) {
     .memberList {
         display: flex;

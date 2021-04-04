@@ -1,10 +1,14 @@
+import { 
+  FETCHING_DATA,
+  SET_STATE,
+  SEARCH_MEMBERS
+} from '../actions/actions'
+
 const initialState = {
   allMembers: [],
-  membersToDisplay: []
+  membersToDisplay: [],
+  loading: false
 }
-
-export const SET_STATE = 'SET_STATE'
-export const SEARCH_MEMBERS = 'SEARCH_MEMBERS'
 
 const selectBy = (value, select, state) => {
   switch (select) {
@@ -50,8 +54,18 @@ const searchAll = (input, filter, state) => {
 
 export const membersReducer = (state = initialState, action) => {
   switch (action.type) {
+    case FETCHING_DATA:
+      return {
+        ...state,
+        loading: true
+      }
     case SET_STATE: 
-      return { ...state, membersToDisplay: action.members, allMembers: action.members }
+      return { 
+        ...state, 
+        membersToDisplay: action.members, 
+        allMembers: action.members,
+        loading: false
+      }
     case SEARCH_MEMBERS:
       return searchAll(
         action.data.value.input,
