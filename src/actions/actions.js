@@ -2,11 +2,13 @@ import axios from 'axios'
 
 export const FETCHING_DATA = 'FETCHING_DATA'
 export const SET_STATE = 'SET_STATE'
+export const SET_STATE_FAILED = 'SET_STATE_FAILED'
 export const SEARCH_MEMBERS = 'SEARCH_MEMBERS'
 
 export const fetchingMembers = () => {
   return {
-    type: FETCHING_DATA
+    type: FETCHING_DATA,
+    loading: true
   }
 }
 
@@ -14,6 +16,14 @@ export const getMembersSuccess = members => {
   return {
     type: SET_STATE,
     members
+  }
+}
+
+export const getMembersFailed = () => {
+  return {
+    type: SET_STATE_FAILED,
+    loading: false,
+    error: true
   }
 }
 
@@ -40,7 +50,7 @@ export const getAllMembers = () => {
         dispatch(getMembersSuccess(data.data.results[0].members))
       })
       .catch(err => {
-        console.error(err)
+        dispatch(getMembersFailed())
       })
   }
 }
