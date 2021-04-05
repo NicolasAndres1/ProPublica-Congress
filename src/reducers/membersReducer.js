@@ -1,15 +1,13 @@
 import { 
   FETCHING_DATA,
   SET_STATE,
-  SEARCH_MEMBERS,
-  SET_STATE_FAILED
+  SEARCH_MEMBERS
 } from '../actions/actions'
 
-export const initialState = {
+const initialState = {
   allMembers: [],
   membersToDisplay: [],
-  loading: false,
-  error: false
+  loading: false
 }
 
 const selectBy = (value, select, state) => {
@@ -59,21 +57,14 @@ export const membersReducer = (state = initialState, action) => {
     case FETCHING_DATA:
       return {
         ...state,
-        loading: action.loading
+        loading: true
       }
     case SET_STATE: 
       return { 
         ...state, 
         membersToDisplay: action.members, 
         allMembers: action.members,
-        loading: false,
-        error: false
-      }
-    case SET_STATE_FAILED:
-      return {
-        ...state,
-        loading: action.loading,
-        error: action.error
+        loading: false
       }
     case SEARCH_MEMBERS:
       return searchAll(
@@ -85,3 +76,5 @@ export const membersReducer = (state = initialState, action) => {
       return state
   }
 }
+
+export default membersReducer
