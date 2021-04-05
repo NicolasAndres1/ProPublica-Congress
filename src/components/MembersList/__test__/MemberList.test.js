@@ -19,9 +19,9 @@ const renderWithRedux = (
 
 afterEach(cleanup)
 
-it('checks initial state is correct', () => {
+test('checks initial state is correct', () => {
   const { getByTestId } = renderWithRedux(<MembersList />)
-  expect(getByTestId('memberList')).toHaveTextContent({
+  expect(reducer(initialState, {})).toEqual({
     allMembers: [],
     membersToDisplay: [],
     loading: false,

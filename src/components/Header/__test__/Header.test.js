@@ -3,7 +3,7 @@ import Header from '../index'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-it('header renders with correct text', () => {
+test('header renders with correct text', () => {
   const component = render(<Header title='ProPublica Congress'/>)
   const titleEl = component.getByTestId('title')
 
