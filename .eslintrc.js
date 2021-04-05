@@ -2,10 +2,15 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
-    'jest/globals': true
+    node: true
   },
   extends: 'plugin:react/recommended',
+  overrides: [
+    {
+      files: ['**/*.test.js'],
+      extends: ['plugin:jest/recommended', 'plugin:jest/style']
+    }
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true

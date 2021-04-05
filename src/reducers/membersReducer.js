@@ -1,13 +1,15 @@
 import { 
   FETCHING_DATA,
   SET_STATE,
-  SEARCH_MEMBERS
+  SEARCH_MEMBERS,
+  SET_STATE_FAILED
 } from '../actions/actions'
 
 const initialState = {
   allMembers: [],
   membersToDisplay: [],
-  loading: false
+  loading: false,
+  error: false
 }
 
 const selectBy = (value, select, state) => {
@@ -65,6 +67,12 @@ export const membersReducer = (state = initialState, action) => {
         membersToDisplay: action.members, 
         allMembers: action.members,
         loading: false
+      }
+    case SET_STATE_FAILED:
+      return {
+        ...state,
+        loading: action.loading,
+        error: action.error
       }
     case SEARCH_MEMBERS:
       return searchAll(
