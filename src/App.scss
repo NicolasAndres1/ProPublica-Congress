@@ -1,1 +1,47 @@
+@import "./assets/styles/defaultStyles.scss";
 
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  outline: none;
+}
+
+.pagination > .active > a {
+  background-color: black;
+  border-color: #47ccde ;
+  color: #fff;
+}
+
+.pagination > li > a {
+  border: 1px solid black ;
+  width: auto;
+  padding: 5px 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: $appColor;
+  border-color: $appColor;
+  outline: none ;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: black 
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-radius: unset
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .pagination {
+    padding: 0;
+  }
+
+  .pagination > li > a {
+    padding: 5px 10px;
+  }
+}

@@ -164,7 +164,7 @@ module.exports = {
       allowTernary: true,
       allowTaggedTemplates: true
     }],
-    'no-unused-vars': ['error', {
+    'no-unused-vars': ['warn', {
       args: 'none',
       caughtErrors: 'none',
       ignoreRestSiblings: true,

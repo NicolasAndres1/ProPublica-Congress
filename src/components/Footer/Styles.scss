@@ -10,3 +10,11 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: $breakpoint-computer) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}

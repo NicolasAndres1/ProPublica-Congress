@@ -5,6 +5,17 @@
     width: 80%;
 }
 
+.paginationContainer {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: $breakpoint-tablet) {
     .memberList {
         display: flex;
@@ -12,6 +23,10 @@
         width: 91%;
         justify-content: space-evenly;
         margin: auto 0;
+    }
+
+    .paginationContainer {
+        max-width: 100%;
     }
 }
 
