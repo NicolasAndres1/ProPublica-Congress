@@ -22,3 +22,6 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Command to run tests
+
+### Deployed app
+http://propublica-congress.herokuapp.com
